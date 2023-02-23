@@ -5,7 +5,7 @@
 //  Created by Chase on 2/23/23.
 //
 
-import Foundation
+import UIKit
 
 class MovieController {
     
@@ -17,6 +17,7 @@ class MovieController {
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         let apiKeyQuery = URLQueryItem(name: Constants.MovieURL.apiKeyKey, value: Constants.MovieURL.apiKeyValue)
         let searchQuery = URLQueryItem(name: Constants.MovieURL.movieQueryKey, value: searchTerm)
+        urlComponents?.queryItems = [apiKeyQuery, searchQuery]
         
         guard let finalURL = urlComponents?.url else { completion(nil) ; return }
         print("Final Movie URL: \(finalURL)")
@@ -50,6 +51,33 @@ class MovieController {
                 print(error.localizedDescription)
                 completion(nil) ; return
             }
+        } .resume()
+    }
+    
+    static func fetchPoster(forMovie movie: Movie, completion: @escaping (UIImage?) -> Void) {
+        
+        guard let baseURL = URL(string: Constants.MovieURL.posterBaseURL) else { completion(nil) ; return }
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        urlComponents?.path.append(movie.posterPath)
+        guard let finalURL = urlComponents?.url else { completion(nil) ; return }
+        print("Final Poster URL: \(finalURL)")
+        
+        URLSession.shared.dataTask(with: finalURL) { data, response, error in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                completion(nil) ; return
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                print("Poster Status Code: \(response.statusCode)")
+            }
+            
+            guard let data = data else { completion(nil) ; return }
+            
+            let poster = UIImage(data: data)
+            completion(poster)
+            
         } .resume()
     }
 }
