@@ -16,6 +16,7 @@
 		AF4F14E129A7CFFB002505F9 /* MovieController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F14E029A7CFFB002505F9 /* MovieController.swift */; };
 		AF4F14E529A7D187002505F9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F14E429A7D187002505F9 /* Constants.swift */; };
 		AF4F14E729A7D1BA002505F9 /* MovieListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F14E629A7D1BA002505F9 /* MovieListTableViewController.swift */; };
+		AF4F14EA29A7DDD0002505F9 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4F14E929A7DDD0002505F9 /* MovieTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		AF4F14E029A7CFFB002505F9 /* MovieController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieController.swift; sourceTree = "<group>"; };
 		AF4F14E429A7D187002505F9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AF4F14E629A7D1BA002505F9 /* MovieListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewController.swift; sourceTree = "<group>"; };
+		AF4F14E929A7DDD0002505F9 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				AF4F14DC29A7CC72002505F9 /* StoryBoard */,
 				AF4F14DF29A7CFE4002505F9 /* Model */,
 				AF4F14E229A7CFFF002505F9 /* Controllers */,
+				AF4F14EB29A7DDD3002505F9 /* CustomCell */,
 			);
 			path = MovieList;
 			sourceTree = "<group>";
@@ -122,6 +125,14 @@
 				AF4F14E629A7D1BA002505F9 /* MovieListTableViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AF4F14EB29A7DDD3002505F9 /* CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				AF4F14E929A7DDD0002505F9 /* MovieTableViewCell.swift */,
+			);
+			path = CustomCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +208,7 @@
 			files = (
 				AF4F14E729A7D1BA002505F9 /* MovieListTableViewController.swift in Sources */,
 				AF4F14E529A7D187002505F9 /* Constants.swift in Sources */,
+				AF4F14EA29A7DDD0002505F9 /* MovieTableViewCell.swift in Sources */,
 				AF4F14E129A7CFFB002505F9 /* MovieController.swift in Sources */,
 				AF4F14C829A7C441002505F9 /* AppDelegate.swift in Sources */,
 				AF4F14CA29A7C441002505F9 /* SceneDelegate.swift in Sources */,
