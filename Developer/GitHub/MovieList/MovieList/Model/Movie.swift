@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Movie {
+class Movie: Encodable {
     
     let title: String
     let overview: String
